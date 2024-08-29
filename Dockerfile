@@ -4,7 +4,12 @@ FROM ollama/ollama:latest
 # Expose port 11434
 EXPOSE 11434
 
-RUN mkdir -p /root/.ollama
+# Create a directory within /root with appropriate permissions (if running as root)
+RUN mkdir -p /root/.ollama && \
+    chmod -R 700 /root/.ollama
+
+# Set environment variable to tell the application where to store its data
+ENV OLLAMA_HOME=/root/.ollama
 
 # Command to run Ollama and serve
 ENTRYPOINT ["/bin/ollama"]
