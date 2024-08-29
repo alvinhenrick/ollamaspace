@@ -4,7 +4,7 @@ emoji: 🌍
 colorFrom: blue
 colorTo: pink
 sdk: docker
-app_port: 8000
+app_port: 11434
 pinned: false
 license: mit
 ---
