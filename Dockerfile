@@ -1,5 +1,5 @@
 # Use the official Python base image
-FROM python:3.10-slim
+FROM python:3.10
 
 RUN useradd -m -u 1000 user
 USER user
