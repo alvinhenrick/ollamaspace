@@ -1,5 +1,5 @@
 ---
-title: Ollamasapce
+title: Ollamaspace
 emoji: 🌍
 colorFrom: blue
 colorTo: pink
