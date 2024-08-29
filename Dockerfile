@@ -5,11 +5,11 @@ FROM ollama/ollama:latest
 EXPOSE 11434
 
 # Create a directory within /root with appropriate permissions (if running as root)
-RUN mkdir -p /root/.ollama && \
-    chmod -R 700 /root/.ollama
+RUN mkdir -p /.ollama && \
+    chmod -R 700 /.ollama
 
 # Set environment variable to tell the application where to store its data
-ENV OLLAMA_HOME=/root/.ollama
+ENV OLLAMA_HOME=/.ollama
 
 # Command to run Ollama and serve
 ENTRYPOINT ["/bin/ollama"]
