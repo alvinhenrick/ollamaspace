@@ -1,21 +1,17 @@
 # Use the official Python base image
 FROM python:3.10
 
-RUN useradd -m -u 1000 user
-USER user
-ENV PATH="/home/user/.local/bin:$PATH"
-
 # Set the working directory inside the container
 WORKDIR /app
 
 # Copy the requirements file to the working directory
-COPY --chown=user ./requirements.txt requirements.txt
+COPY requirements.txt .
 
 # Install the Python dependencies
 RUN pip install --no-cache-dir --upgrade -r requirements.txt
 
 # Copy the application code to the working directory
-COPY --chown=user . /app
+COPY . .
 
 # Expose the port on which the application will run
 EXPOSE 8000
